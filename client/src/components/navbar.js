@@ -7,7 +7,7 @@ const navbar = () => {
   return (
     <div className="bg-gray-100 shadow-md">
       <div className="flex items-center justify-between px-[150px] py-4">
-        <Link to="/GaNuong">
+        <Link to="/Home">
           <img src="/images/logo.png" alt="Logo" className="h-16 w-auto" />
         </Link>
 
