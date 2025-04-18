@@ -1,9 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import SearchGlobal from "./searchGlobal";
-import Auth from "../components/auth/auth";
 
-const navbar = () => {
+const Navbar = () => {
   return (
     <div className="bg-gray-100 shadow-md">
       <div className="flex items-center justify-between px-[150px] py-4">
@@ -12,14 +10,9 @@ const navbar = () => {
         </Link>
 
         <div className="flex items-center gap-8">
-          <SearchGlobal />
-          <Auth />
-          <Link
-            to="/GioHang"
-            className="text-blue-600 font-semibold hover:underline"
-          >
-            Giỏ Hàng
-          </Link>
+          <Link to="/search"></Link>
+          <Link to="/auth"></Link>
+          <Link to="/giohang"></Link>
         </div>
       </div>
 
@@ -85,4 +78,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

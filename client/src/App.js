@@ -13,6 +13,7 @@ import Mon7 from "./components/navbar/zmon7";
 import Mon8 from "./components/navbar/zmon8";
 import Mon9 from "./components/navbar/zmon9";
 import GioHang from "./pages/GioHang";
+import Auth from "./components/auth/auth";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
               <Route path="/mon8" element={<Mon8 />} />
               <Route path="/mon9" element={<Mon9 />} />
               <Route path="/GioHang" element={<GioHang />} />
+              <Route path="/auth" element={<Auth />} />
             </Routes>
           </>
         }
