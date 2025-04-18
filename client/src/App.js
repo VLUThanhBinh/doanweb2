@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./pages/navbar";
 import Admin from "./Admin/Admin";
 import Home from "./pages/Home";
@@ -16,32 +16,30 @@ import GioHang from "./pages/GioHang";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/Admin" element={<Admin />} />
-        <Route
-          path="*"
-          element={
-            <>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/GaNuong" element={<GaNuong />} />
-                <Route path="/Salad" element={<Salad />} />
-                <Route path="/ThitNuong" element={<ThitNuong />} />
-                <Route path="/mon4" element={<Mon4 />} />
-                <Route path="/mon5" element={<Mon5 />} />
-                <Route path="/mon6" element={<Mon6 />} />
-                <Route path="/mon7" element={<Mon7 />} />
-                <Route path="/mon8" element={<Mon8 />} />
-                <Route path="/mon9" element={<Mon9 />} />
-                <Route path="/GioHang" element={<GioHang />} />
-              </Routes>
-            </>
-          }
-        />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/Admin" element={<Admin />} />
+      <Route
+        path="*"
+        element={
+          <>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/GaNuong" element={<GaNuong />} />
+              <Route path="/Salad" element={<Salad />} />
+              <Route path="/ThitNuong" element={<ThitNuong />} />
+              <Route path="/mon4" element={<Mon4 />} />
+              <Route path="/mon5" element={<Mon5 />} />
+              <Route path="/mon6" element={<Mon6 />} />
+              <Route path="/mon7" element={<Mon7 />} />
+              <Route path="/mon8" element={<Mon8 />} />
+              <Route path="/mon9" element={<Mon9 />} />
+              <Route path="/GioHang" element={<GioHang />} />
+            </Routes>
+          </>
+        }
+      />
+    </Routes>
   );
 };
 
