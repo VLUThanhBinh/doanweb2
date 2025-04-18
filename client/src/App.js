@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar";
-import Admin from "./pages/Admin";
+import Navbar from "./pages/navbar";
+import Admin from "./Admin/Admin";
 import Home from "./pages/Home";
 import GaNuong from "./components/navbar/GaNuong";
 import Salad from "./components/navbar/Salad";
@@ -12,7 +12,7 @@ import Mon6 from "./components/navbar/zmon6";
 import Mon7 from "./components/navbar/zmon7";
 import Mon8 from "./components/navbar/zmon8";
 import Mon9 from "./components/navbar/zmon9";
-import GioHang from "./components/navbar/GioHang";
+import GioHang from "./pages/GioHang";
 
 const App = () => {
   return (

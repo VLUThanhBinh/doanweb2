@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import SearchGlobal from "./searchGlobal";
-import Auth from "./auth";
+import Auth from "../components/auth/auth";
 
 const navbar = () => {
   return (
