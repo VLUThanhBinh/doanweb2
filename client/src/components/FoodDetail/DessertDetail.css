@@ -1,0 +1,76 @@
+.dessert-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: "Poppins", Arial, sans-serif;
+  }
+  
+  .dessert-detail img {
+    display: block; /* Đặt hình ảnh thành khối để căn giữa */
+    margin: 0 auto; /* Căn giữa hình ảnh */
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dessert-detail h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .dessert-detail p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 10px 0;
+  }
+  
+  .dessert-detail .price {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .dessert-detail .category {
+    font-size: 1rem;
+    color: #95a5a6;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .dessert-detail h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .dessert-detail ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dessert-detail ul li {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 5px 0;
+  }
+  
+  .dessert-detail ul li::before {
+    content: "• ";
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .dessert-detail p + p {
+    margin-top: 5px;
+  }
