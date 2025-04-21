@@ -1,24 +1,31 @@
 import express from "express";
-import { addFood } from "../controllers/foodController.js";
+import {
+  addFood,
+  listFood,
+  getFoodById,
+  deleteFood,
+  updateFood,
+} from "../controllers/foodController.js";
 import multer from "multer";
 
-const foodRouter = express.Router();
+const router = express.Router();
 
-//image storage engine
-
+// Cấu hình multer để upload ảnh
 const storage = multer.diskStorage({
-    destination:"uploads",
-    filename:(req,file,cb)=>{
-        return cb(null,`${Date.now()}${file.originalname}`)
-    }
-})
+  destination: (req, file, cb) => {
+    cb(null, "uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+const upload = multer({ storage });
 
-const upload = multer({storage:storage})
+// Routes
+router.post("/add", upload.single("image"), addFood); // Thêm món ăn
+router.get("/list", listFood); // Lấy danh sách món ăn
+router.get("/:id", getFoodById); // Lấy chi tiết món ăn
+router.delete("/:id", deleteFood); // Xóa món ăn
+router.put("/:id", updateFood); // Sửa món ăn
 
-foodRouter.post("/add",upload.single("image"),addFood)
-
-
-
-
-
-export default foodRouter; 
+export default router;

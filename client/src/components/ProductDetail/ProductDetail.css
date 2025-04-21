@@ -1,0 +1,232 @@
+/* Container chính */
+.dessert-detail {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Hình ảnh món ăn */
+.dessert-detail img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề món ăn */
+.dessert-detail h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Mô tả và thông tin món ăn */
+.dessert-detail p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin: 10px 0;
+}
+
+.dessert-detail .price {
+  font-size: 1.2rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.dessert-detail .category {
+  font-size: 1rem;
+  color: #95a5a6;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Hành động (nút) */
+.dessert-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #95a5a6;
+  color: white;
+}
+
+.back-button:hover {
+  background-color: #7f8c8d;
+}
+
+/* Style mới cho chi tiết sản phẩm theo form KFC */
+.product-detail-kfc-wrapper {
+  display: flex;
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+  overflow: hidden;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.product-detail-img-col {
+  flex: 1.1;
+  background: #fafbfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.product-detail-img-col img {
+  width: 94%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(44,62,80,0.09);
+  background: #fff;
+}
+
+.product-detail-info-col {
+  flex: 1.3;
+  padding: 36px 30px 34px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.product-detail-title-kfc {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.product-detail-desc-kfc {
+  font-size: 1.02rem;
+  color: #636e72;
+  margin-bottom: 14px;
+}
+
+.product-detail-price-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.product-detail-oldprice {
+  color: #aaa;
+  font-size: 1.12rem;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.product-detail-price {
+  color: #d90000;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.product-detail-divider {
+  border: none;
+  border-top: 1.5px solid #f0f0f0;
+  margin: 12px 0 18px 0;
+}
+
+.product-detail-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 20px 0;
+}
+
+.product-detail-qty-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #e5e5e5;
+  background: #f7f7f7;
+  color: #222;
+  font-size: 1.22rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+
+.product-detail-qty-btn:hover {
+  background: #fff0f0;
+  color: #d90000;
+  border: 1.5px solid #d90000;
+}
+
+.product-detail-qty-row span {
+  font-size: 1.13rem;
+  color: #222;
+  min-width: 28px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.product-detail-addcart-btn {
+  padding: 13px 38px;
+  border-radius: 30px;
+  border: none;
+  background: #d90000;
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s;
+  margin-left: 18px;
+  box-shadow: 0 2px 10px rgba(217,0,0,0.08);
+}
+
+.product-detail-addcart-btn:hover {
+  background: #b80000;
+}
+
+.product-detail-meta {
+  font-size: 0.99rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.product-detail-section-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+  margin: 18px 0 7px 0;
+}
+
+@media (max-width: 900px) {
+  .product-detail-kfc-wrapper {
+    flex-direction: column;
+    max-width: 98vw;
+  }
+  .product-detail-img-col, .product-detail-info-col {
+    padding: 18px !important;
+  }
+  .product-detail-img-col img {
+    max-width: 90vw;
+  }
+}

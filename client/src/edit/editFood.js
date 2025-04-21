@@ -3,15 +3,15 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
 const EditFood = () => {
-  const { id } = useParams(); // Lấy ID món ăn từ URL
-  const navigate = useNavigate(); // Điều hướng sau khi cập nhật thành công
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     price: "",
-    image: "",
     category: "",
+    image: "",
   });
 
   // Lấy thông tin món ăn hiện tại
@@ -19,7 +19,7 @@ const EditFood = () => {
     const fetchFood = async () => {
       try {
         const response = await axios.get(`/api/food/${id}`);
-        setFormData(response.data); // Đổ dữ liệu món ăn vào form
+        setFormData(response.data);
       } catch (error) {
         console.error(error);
         alert("Failed to fetch food details");
@@ -40,7 +40,7 @@ const EditFood = () => {
     try {
       const response = await axios.put(`/api/food/update/${id}`, formData);
       alert(response.data.message);
-      navigate("/desserts"); // Điều hướng về danh sách món ăn sau khi cập nhật
+      navigate("/Desserts");
     } catch (error) {
       console.error(error);
       alert("Failed to update food item");

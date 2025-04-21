@@ -1,8 +1,11 @@
 import React from 'react'
 
 const Drinks = () => {
-  return <div>foods</div>;
-
+  return (
+    <div>
+      đồ uống 
+    </div>
+  )
 }
 
 export default Drinks

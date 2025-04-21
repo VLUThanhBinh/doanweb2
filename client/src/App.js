@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./pages/navbar";
-import Admin from "./Admin/Admin";
+import Footer from "./pages/Footer/footer";
 import Home from "./pages/Home";
 import Foods from "./components/navbar/Foods";
 import Drinks from "./components/navbar/Drinks";
@@ -12,15 +12,17 @@ import About from "./pages/Footer/aboutUs";
 import Contact from "./pages/Footer/Contact";
 import TermsOfService from "./pages/Footer/TermsOfService";
 import PrivacyPolicy from "./pages/Footer/PrivacyPolicy";
-import Footer from "./pages/Footer/footer";
-import DessertDetail from "./components/FoodDetail/DessertDetail";
+import DessertDetail from "./components/ProductDetail/DessertDetail";
 import EditFood from "./edit/editFood";
+import SellerLayout from "./pages/seller/SellerLayout";
+import DrinkDetail from "./components/ProductDetail/DrinkDetail";
+import FoodDetail from "./components/ProductDetail/FoodDetail";
+
 const App = () => {
   return (
     <Routes>
-      <Route path="/Admin" element={<Admin />} />
+      <Route path="/seller" element={<SellerLayout />} />
       <Route
-        className="flex"
         path="*"
         element={
           <>
@@ -30,8 +32,12 @@ const App = () => {
               <Route path="/Foods" element={<Foods />} />
               <Route path="/Drinks" element={<Drinks />} />
               <Route path="/Desserts" element={<Desserts />} />
-              <Route path="/Desserts/:id" element={<DessertDetail />} /> {/* Route chi tiết món tráng miệng */}
-              <Route path="/Desserts/edit/:id" element={<EditFood />} /> {/* Route sửa món ăn */}
+              <Route path="/Desserts/:id" element={<DessertDetail />} />
+              <Route path="/Desserts/edit/:id" element={<EditFood />} />
+              <Route path="/Drinks/:id" element={<DrinkDetail />} />
+              <Route path="/Foods/:id" element={<FoodDetail />} />
+              <Route path="/Foods/edit/:id" element={<EditFood />} />
+              <Route path="/Drink/edit/:id" element={<EditFood />} />
               <Route path="/Cart" element={<Cart />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/about" element={<About />} />
