@@ -9,7 +9,7 @@ const FoodDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [food, setFood] = useState(null);
-  const [quantity, setQuantity] = useState(1);
+  
 
   useEffect(() => {
     const fetchFood = async () => {
@@ -18,8 +18,7 @@ const FoodDetail = () => {
         setFood(response.data.data);
       } catch (error) {
         console.error("Failed to fetch food:", error);
-        alert("Failed to fetch food details!");
-        navigate("/Foods");
+        toast.error("Không thể tải dữ liệu món ăn!");
       }
     };
 
@@ -27,40 +26,25 @@ const FoodDetail = () => {
   }, [id, navigate]);
 
   if (!food) {
-    return <h2>Loading...</h2>;
+    return <h2>Đang tải dữ liệu món ăn...</h2>;
   }
 
-  const handleAddToCart = () => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingItem = storedCart.find((item) => item.id === food.id);
-    if (existingItem) {
-      existingItem.quantity += quantity;
-    } else {
-      storedCart.push({ ...food, quantity });
-    }
-    localStorage.setItem("cart", JSON.stringify(storedCart));
-    toast.success("Đã thêm vào giỏ hàng!", {
-      position: "bottom-right",
-      autoClose: 1200,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      style: { fontSize: "0.95rem", minWidth: 120, maxWidth: 180, padding: "8px 10px" },
-      icon: false,
-    });
-  };
+  
 
   return (
     <>
       <ToastContainer />
       <div className="product-detail-kfc-wrapper">
         <div className="product-detail-img-col">
-          <img src={`http://localhost:8000/images/${food.image}`} alt={food.name} />
+          {food.image ? (
+            <img src={`http://localhost:8000/images/${food.image}`} alt={food.name || "food"} />
+          ) : (
+            <div style={{width: 200, height: 200, background: '#eee', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Không có ảnh</div>
+          )}
         </div>
         <div className="product-detail-info-col">
-          <div className="product-detail-title-kfc">{food.name}</div>
-          <div className="product-detail-desc-kfc">{food.description}</div>
+          <div className="product-detail-title-kfc">{food.name || "(Không có tên)"}</div>
+          <div className="product-detail-desc-kfc">{food.description || "(Không có mô tả)"}</div>
           <div className="product-detail-price-row">
             {food.oldPrice && (
               <span className="product-detail-oldprice">{food.oldPrice}$</span>
@@ -70,14 +54,7 @@ const FoodDetail = () => {
           <hr className="product-detail-divider" />
           <div className="product-detail-section-label">MÓN CỦA BẠN</div>
           <div className="product-detail-meta">{food.meta || "1 phần " + food.name}</div>
-          <div className="product-detail-qty-row">
-            <button className="product-detail-qty-btn" onClick={() => setQuantity(q => Math.max(1, q - 1))}>-</button>
-            <span>{quantity}</span>
-            <button className="product-detail-qty-btn" onClick={() => setQuantity(q => q + 1)}>+</button>
-            <button className="product-detail-addcart-btn" onClick={handleAddToCart}>
-              Thêm vào giỏ ({food.price * quantity}$)
-            </button>
-          </div>
+          
         </div>
       </div>
     </>

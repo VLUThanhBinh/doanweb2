@@ -159,6 +159,16 @@
     font-weight: bold;
     font-size: 12px; /* Giảm kích thước chữ */
     transition: background-color 0.3s ease;
+    margin-left: 8px;
+}
+
+.delete-button {
+    background-color: #e74c3c !important;
+    right: 90px !important; /* Đặt nút xóa sang trái nút chỉnh sửa */
+}
+
+.delete-button:hover {
+    background-color: #c0392b !important;
 }
 
 .food-item button:hover {

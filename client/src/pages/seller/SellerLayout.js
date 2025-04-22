@@ -3,6 +3,19 @@ import axios from "axios";
 import "./SellerLayout.css";
 
 const SellerLayout = () => {
+  // ...
+  // Hàm xóa sản phẩm
+  const handleDeleteFood = async (id) => {
+    if (!window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) return;
+    try {
+      await axios.delete(`http://localhost:8000/api/food/${id}`);
+      setFoods(foods.filter((item) => item._id !== id));
+      alert("Đã xóa sản phẩm thành công");
+    } catch (error) {
+      console.error("Failed to delete food:", error);
+      alert("Xóa sản phẩm thất bại");
+    }
+  };
   const [foods, setFoods] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -174,6 +187,7 @@ const SellerLayout = () => {
                   <p>Price: {food.price}đ</p>
                   <p>Category: {food.category}</p>
                   <button onClick={() => handleEdit(food)}>Chỉnh sửa</button>
+                  <button className="delete-button" onClick={() => handleDeleteFood(food._id)}>Xóa</button>
                 </div>
               </div>
             ))}
