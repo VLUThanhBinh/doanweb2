@@ -17,6 +17,7 @@ const SellerLayout = () => {
     }
   };
   const [foods, setFoods] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -178,18 +179,28 @@ const SellerLayout = () => {
         {activeTab === "list" && (
           <div className="food-list">
             <h2>Product List</h2>
-            {foods.map((food) => (
-              <div key={food._id} className="food-item">
-                <img src={`http://localhost:8000/images/${food.image}`} alt={food.name} />
-                <div>
-                  <h3>{food.name}</h3>
-                  <p>{food.description}</p>
-                  <p>Price: {food.price}đ</p>
-                  <p>Category: {food.category}</p>
-                  <button onClick={() => handleEdit(food)}>Chỉnh sửa</button>
-                  <button className="delete-button" onClick={() => handleDeleteFood(food._id)}>Xóa</button>
+            <input
+              type="text"
+              placeholder="Tìm kiếm theo tên sản phẩm..."
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              className="search-input"
+              style={{ marginBottom: 20, padding: 8, width: '100%', borderRadius: 6, border: '1px solid #ccc' }}
+            />
+            {foods
+              .filter((food) => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+              .map((food) => (
+                <div key={food._id} className="food-item">
+                  <img src={`http://localhost:8000/images/${food.image}`} alt={food.name} />
+                  <div>
+                    <h3>{food.name}</h3>
+                    <p>{food.description}</p>
+                    <p>Price: {food.price}đ</p>
+                    <p>Category: {food.category}</p>
+                    <button onClick={() => handleEdit(food)}>Chỉnh sửa</button>
+                    <button className="delete-button" onClick={() => handleDeleteFood(food._id)}>Xóa</button>
+                  </div>
                 </div>
-              </div>
             ))}
           </div>
         )}
